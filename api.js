@@ -6,16 +6,14 @@ router.get(`/recipes/:food`, function (request, response) {
     let food = req.params.food
     console.log(food)
     
-    request(`http://www.recipepuppy.com/api/?q=${food}`, function (err, result) {
-        let body = JSON.parse(result.body)
+    request(`http://www.recipepuppy.com/api/?q=${food}`, function (err, results) {
+        let body = JSON.parse(response.body)
         let results = body.results
-    
         response.send(results)
     })
 
     let recipes = []
-    
-    recipes = results.map(r => {
+        recipes = results.map(r => {
                 let recipe = {}
                 let ingredients = r.ingredients.split(',')
     
