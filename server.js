@@ -15,7 +15,14 @@ app.use('/', api)
 
 
 
-const port = 3000
+const port = 8080
+
+
+
+// router.get(`/sanity/`, function(req, res){
+//     res.send("ok")
+// })
+
 app.listen(port, function () {
-    console.log(`Server running on ${port}`)
+    console.log(`port ${port} ok`)
 })
